@@ -1,0 +1,163 @@
+.top-banner-lp-br {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #E9E9E9;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: contain;
+  @include smScreenWidth {
+    & {
+      background-size: cover;
+    }
+  }
+  @include largeScreenSize {
+    & {
+      background-size: 60%;
+    }
+  }  
+  @include mobil {
+    & {
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+  }
+  &__wrp {
+    position: relative;
+    width: 100%;
+    @include mobil {
+      margin-bottom: 20px;
+    }
+  }
+  &__img-wrp {
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    background-color: #a5a5a5;
+    @include mobil {
+      & {
+        height: 237px;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include mobil {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__img-mob {
+    display: none;
+    @include mobil {
+      & {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 237px;
+      }
+    }
+  }
+  &__text-wrp {
+    max-width: 1550px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    @include mobil {
+      & {
+        position: relative;
+      }
+    }
+  }
+  &__text-pos {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    background-color: #E9E9E9;
+    clip-path: polygon(0 0, 85% 0, 51% 101%, 0% 100%);
+    @include textPad {
+      & {
+        padding-left: 16px;
+      }
+    }
+    @include mobil {
+      & {
+        margin: 0 auto;
+      }
+    }
+  }
+  &__text {
+    max-width: 1075px;
+    margin-bottom: 40px;
+    padding-top: 57px;
+    font-family: $fontRobotoReg;
+    font-size: 48px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $colorBlackText;
+    @include fontBolt;
+    @include mobil {
+      & {
+        text-align: center;
+        font-size: 26px;
+        color: #000000;
+        background-color: #ad2a2a00;
+      }
+    }
+  }
+  &__pos-back {
+    display: flex;
+  }
+  &__text-img {
+    width: 40%;
+  }
+  &__instal-od {
+    display: flex;
+    align-items: end;
+    font-family: $fontRobotoReg;
+  }
+  &__instal-od-wrp {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// html код к баннеру
+// <article class="top-banner-lp-br">
+//         <section class="top-banner-lp-br__wrp">
+//           <div class="top-banner-lp-br__img-wrp">
+//             <img
+//               class="top-banner-lp-br__img"
+//               src="img/bunnerCalculator.jpg"
+//               alt="Калькулятор подбора АКБ для ИБП "
+//             />
+//             <img
+//               class="top-banner-lp-br__img-mob"
+//               src="img/bunnerCalculatorMob.png"
+//               alt="Калькулятор подбора АКБ для ИБП "
+//             />
+//           </div>
+//         </section>
+//         <section class="top-banner-lp-br__text-wrp">
+//           <div class="top-banner-lp-br__text-pos">
+//             <h1 class="top-banner-lp-br__text">
+//               Калькулятор подбора АКБ для ИБП
+//             </h1>
+//           </div>
+//         </section>
+//       </article>

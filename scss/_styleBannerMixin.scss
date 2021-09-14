@@ -1,0 +1,40 @@
+$largeScreenSize: 2207px;
+$textPad: 1456px;
+$smScreenWidth: 1376px;
+$smallestScreenWidth: 1080px;
+$smScreenHeight: 720px;
+$bigMobileWidth: 960px;
+$mobileWidth: 680px;
+$mobileHeight: 600px;
+
+$colorBlackText: #434343;
+
+@mixin smScreenWidth {
+  @media (max-width: $smScreenWidth) {
+    @content;
+  }
+}
+
+@mixin textPad {
+  @media (max-width: $textPad) {
+    @content;
+  }
+}
+
+@mixin mobil {
+  @media (max-width: $mobileWidth) {
+    @content;
+  }
+}
+
+@mixin mobil {
+  @media (max-width: $mobileWidth) {
+    @content;
+  }
+}
+
+@mixin largeScreenSize {
+  @media (min-width: $largeScreenSize) {
+    @content;
+  }
+}
