@@ -1,8 +1,9 @@
 // Переменные
 
 $fontRobotoReg: "Roboto", sans-serif;
-$mainColor: #f5821f;
+$mainColor: #F36C21;
 $inputAdaptive: 922px;
+$greyLine: #C4C4C4;
 // Миксины
 
 @mixin inputAdaptive {
@@ -14,6 +15,24 @@ $inputAdaptive: 922px;
 @mixin fontBolt {
   font-family: $fontRobotoReg;
   font-weight: 700;
+}
+
+@mixin fontBoltHeading {
+  font-family: $fontRobotoReg;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+@mixin pageGred {
+  max-width: 1550px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin marCenter {
+  margin-left: auto;
+  margin-right: auto;  
 }
 
 @mixin btn {
@@ -39,3 +58,24 @@ $inputAdaptive: 922px;
   border-radius: 8px;
   z-index: -1;
 }
+
+@mixin pentagonalElement {
+  width: 458px;
+  height: 315px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  clip-path: polygon(100% 0, 100% 76%, 76% 100%, 0 100%, 0 0);
+}
+
+@mixin positionImg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin centreFlex {
+  display: flex;
+  align-items: center;
+}
+
