@@ -1,179 +1,45 @@
-.top-banner-lp-br {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  background-color: #E9E9E9;
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-size: contain;
-  @include smScreenWidth {
-    & {
-      background-size: cover;
-    }
-  }
-  @include largeScreenSize {
-    & {
-      background-size: 60%;
-    }
-  }  
-  @include mobil {
-    & {
-      margin-bottom: 20px;
-      flex-direction: column;
-    }
-  }
-  &__wrp {
-    position: relative;
-    width: 100%;
-    @include mobil {
-      margin-bottom: 20px;
-    }
+.main-ban-ups {
+  font-family: $fontRobotoReg;
+  &__wrp-cont {
+    background-color: #E9E9E9;
   }
   &__img-wrp {
-    height: 550px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    background-color: #a5a5a5;
-    @include mobil {
-      & {
-        height: 237px;
-      }
-    }
+    position: relative;
+    
   }
   &__img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    @include mobil {
-      & {
-        display: none;
-      }
-    }
+    @include positionImg;
+    margin-left: auto;
   }
-  &__img-mob {
-    display: none;
-    @include mobil {
-      & {
-        display: flex;
-        object-fit: cover;
-        width: 100%;
-        height: 237px;
-      }
-    }
-  }
-  &__text-wrp {
-    max-width: 1550px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: end;
-    z-index: 10;
-    @include mobil {
-      & {
-        position: relative;
-      }
-    }
-  }
-  &__text-pos {
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  &__parent {
     position: relative;
     background-color: #E9E9E9;
-    clip-path: polygon(0 0, 100% 0, 52% 102%, 0% 100%);
-    @include textPad {
-      & {
-        padding-left: 16px;
-      }
-    }
-    @include mobil {
-      & {
-        margin: 0 auto;
-      }
-    }
   }
-  &__text {
-    max-width: 1075px;
-    margin-bottom: 40px;
-    padding-top: 57px;
-    font-family: $fontRobotoReg;
-    font-size: 48px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: $colorBlackText;
-    @include fontBolt;
-    @include mobil {
-      & {
-        text-align: center;
-        font-size: 26px;
-        color: #000000;
-        background-color: #ad2a2a00;
-      }
-    }
-  }
-  &__pos-back {
-    display: flex;
-  }
-  &__text-img {
-    width: 40%;
-  }
-  &__instal-od {
+  &__size {
     position: relative;
-    display: flex;
-    align-items: end;
-    font-family: $fontRobotoReg;
+    @include pageGred;
+    clip-path: polygon(0 0, 51% 0, 26% 100%, 0% 100%)
   }
-  &__instal-od-wrp {
-    // width: 800px;
-    // position: absolute;
-    // left: -295px;
-    display: flex;
-    font-size: 24px;
-    // background: rgba(255, 255, 255, 0.6);
-    // box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
-    // clip-path: polygon(8% 0, 100% 0, 94% 100%, 0% 100%);
+  &__h1 {
+    max-width: 678px;
+    margin-bottom: 21px;
+    padding-top: 57px;
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
-  &__instal-od-img {
-    // padding-left: 70px;
-    // padding-top: 16px;
-    // padding-bottom: 16px;
-    // margin-right: 22px;
+  &__instal-odessa-free {
+    margin-bottom: 21px;
+    @include centreFlex;
   }
-  &__instal-text {
-    max-width: 687px;
+  &__instal-odessa-icon {
+    margin-right: 20px;
+  }
+  &__instal-odessa-text {
+    max-width: 347px;
+    font-size: 16px;
+  }
+  &__instal-odessa-img {
+    
   }
 }
-
-// html код к баннеру
-// <article class="top-banner-lp-br">
-//         <section class="top-banner-lp-br__wrp">
-//           <div class="top-banner-lp-br__img-wrp">
-//             <img
-//               class="top-banner-lp-br__img"
-//               src="img/bunnerCalculator.jpg"
-//               alt="Калькулятор подбора АКБ для ИБП "
-//             />
-//             <img
-//               class="top-banner-lp-br__img-mob"
-//               src="img/bunnerCalculatorMob.png"
-//               alt="Калькулятор подбора АКБ для ИБП "
-//             />
-//           </div>
-//         </section>
-//         <section class="top-banner-lp-br__text-wrp">
-//           <div class="top-banner-lp-br__text-pos">
-//             <h1 class="top-banner-lp-br__text">
-//               Калькулятор подбора АКБ для ИБП
-//             </h1>
-//           </div>
-//         </section>
-//       </article>

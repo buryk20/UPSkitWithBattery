@@ -22,12 +22,41 @@ $greyLine: #C4C4C4;
   font-weight: 700;
   font-size: 36px;
 }
+@mixin iconBenefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+@mixin technologyAkb {
+    min-width: 187px;
+    height: 32px;
+    @include btnSmall;
+    position: relative;
+}
 
 @mixin pageGred {
   max-width: 1550px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+}
+
+@mixin textHeadingSale {
+  max-width: 612px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  @include fontBoltHeading;
+}
+
+@mixin textSale {
+  max-width: 612px;
+  padding-top: 24px;
+  margin-bottom: 30px;
+  font-family: $fontRobotoReg;
+  font-size: 18px;
 }
 
 @mixin marCenter {
@@ -37,6 +66,15 @@ $greyLine: #C4C4C4;
 
 @mixin btn {
   padding: 8px 18px;
+  color: #ffffff;
+  background-color: $mainColor;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@mixin btnSmall {
+  padding: 5px 18px;
   color: #ffffff;
   background-color: $mainColor;
   border-radius: 8px;

@@ -94,4 +94,168 @@
       }
     }
   }
+  @at-root {
+    .action-odessa-ups {
+      min-height: 567px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &__img-bac {
+        @include positionImg;
+      }
+      &__text-wrp {
+        @include pageGred;
+      }
+      &__heading {
+        @include textHeadingSale;
+      }
+      &__text {
+        @include textSale;
+      }
+      &__text-btn {
+        min-width: 187px;
+        @include btn;
+      }
+    }
+  }
+  @at-root {
+    .type-akb-ups {
+      @include pageGred;
+      &__wrp-right {
+        display: flex;
+        justify-content: space-around;
+      }
+      &__wrp-left {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+      &__text-wrp {
+        display: flex;
+      }
+      &__icon-wrp-bel {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      &__text-wrp-apecific {
+        max-width: 349px;
+        margin-right: 74px;
+      }
+      &__text-wrp-apecific-left {
+        max-width: 349px;
+      }
+      &__icon-wrp {
+        margin-bottom: 11px;
+        display: flex;
+      }
+      &__img-btn-gel {
+        @include technologyAkb;
+        top: 60px;
+        left: 65px;
+        background-color: #44B1BB;
+      }
+      &__img-btn-agm {
+        @include technologyAkb;
+        top: 60px;
+        left: 65px;
+        background-color: #1A3B7A;
+      }
+      &__img-btn-gel-left {
+        @include technologyAkb;
+        top: 60px;
+        left: -70px;
+        background-color: #E25750;
+      }
+      &__img-btn-mgel-left {
+        @include technologyAkb;
+        top: 60px;
+        left: -70px;
+        background-color: #329138;
+      }
+      &__img {
+        display: flex;
+      }
+      &__img-left {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      &__text-heading {
+        max-width: 809px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        @include fontBoltHeading;
+      }
+      &__text-heading-left {
+        max-width: 770px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        @include fontBoltHeading;
+        text-align: end;
+      }
+      &__text-main {
+        margin-bottom: 18px;
+        font-size: 14px;
+      }
+      &__icon {
+        margin-right: 7px;
+      }
+      &__icon-text-gren {
+        color: #329138;
+      }
+      &__icon-text-red {
+        color: #E25750;
+      }
+      &__wrp-icon {
+        @include iconBenefits;
+      }
+      &__wrp-icon-left {
+        margin-right: 80px;
+        @include iconBenefits;
+      }
+      &__btn {
+        margin-top: 10px;
+        @include btn;
+      }
+      &__btn-wrp {
+        display: flex;
+        justify-content: center;
+        padding-left: 250px;
+      }
+      &__text-wrp-left {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+.ups-akb-included {
+  position: relative;
+  &__text-wrp {
+    @include pageGred;
+  }
+  &__heading{
+    @include textHeadingSale;
+  }
+  &__text {
+    @include textSale;
+  }
+  &__text-btn {
+    @include btn;
+  }
+  &__img {
+    @include positionImg;
+  }
+  &__wrp {
+    min-height: 700px;
+    @include centreFlex;
+    position: relative;
+  }
+  &__heading-text {
+    margin-bottom: 40px;
+    @include pageGred;
+    @include fontBoltHeading;
+  }
 }
