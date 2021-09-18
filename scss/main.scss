@@ -35,8 +35,8 @@
       font-family: $fontRobotoReg;
       &__wrp-pos {
         display: flex;
-      justify-content: space-between;
-      position: relative;
+        justify-content: space-between;
+        position: relative;
       }
       &__cont-img-wrp {
         position: relative;
@@ -55,8 +55,7 @@
         max-width: 263px;
       }
       &__line {
-        width: 349px;
-        border-top: 1px solid $mainColor;
+        @include littleOrangeLine;
       }
       &__icon {
         height: 112px;
@@ -76,7 +75,7 @@
       }
       &__smail-text {
         position: absolute;
-        top:32px;
+        top: 32px;
         left: 60px;
       }
       &__smail-pos {
@@ -102,6 +101,8 @@
       align-items: center;
       position: relative;
       &__img-bac {
+        width: 100%;
+        height: 550px;
         @include positionImg;
       }
       &__text-wrp {
@@ -154,19 +155,19 @@
         @include technologyAkb;
         top: 60px;
         left: 65px;
-        background-color: #44B1BB;
+        background-color: #44b1bb;
       }
       &__img-btn-agm {
         @include technologyAkb;
         top: 60px;
         left: 65px;
-        background-color: #1A3B7A;
+        background-color: #1a3b7a;
       }
       &__img-btn-gel-left {
         @include technologyAkb;
         top: 60px;
         left: -70px;
-        background-color: #E25750;
+        background-color: #e25750;
       }
       &__img-btn-mgel-left {
         @include technologyAkb;
@@ -205,7 +206,7 @@
         color: #329138;
       }
       &__icon-text-red {
-        color: #E25750;
+        color: #e25750;
       }
       &__wrp-icon {
         @include iconBenefits;
@@ -235,8 +236,9 @@
   position: relative;
   &__text-wrp {
     @include pageGred;
+    color: #ffffff;
   }
-  &__heading{
+  &__heading {
     @include textHeadingSale;
   }
   &__text {
@@ -246,6 +248,9 @@
     @include btn;
   }
   &__img {
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
     @include positionImg;
   }
   &__wrp {
@@ -257,5 +262,106 @@
     margin-bottom: 40px;
     @include pageGred;
     @include fontBoltHeading;
+  }
+}
+
+.external-akb-ups {
+  @include pageGred;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__heading {
+    margin-left: auto;
+    @include textHeadingSale;
+    text-align: right;
+  }
+  &__text-wrp {
+    text-align: end;
+  }
+  &__line {
+    margin-left: auto;
+    @include littleOrangeLine;
+  }
+  &__text {
+    margin-left: auto;
+    @include textSale;
+  }
+  &__wrp {
+    min-height: 700px;
+    @include centreFlex;
+    position: relative;
+  }
+  &__img {
+  }
+}
+
+.promotion-conditions-ups {
+  margin-bottom: 40px;
+  @include pageGred;
+  &__wrp {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__wrp-cont {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-flex;
+    @include borderBlockOrang;
+  }
+  &__heading {
+    @include textHeadingSale;
+    font-size: 36px;
+  }
+  &__numbers {
+    margin-bottom: 3px;
+    @include fontBoltHeading;
+    color: $mainColor;
+  }
+  &__text {
+    max-width: 191px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__wrp-text {
+    padding-left: 30px;
+  }
+  &__text-btn {
+    display: flex;
+    @include marCenter;
+    @include btn;
+  }
+}
+
+.ups-footer-block {
+  position: relative;
+  &__img-back {
+    width: 100%;
+    height: 372px;
+    @include positionImg;
+  }
+  &__text-wrp {
+    @include pageGred;
+    position: relative;
+    display: flex
+    
+    ;
+  }
+  &__text-img {
+    position: relative;
+    z-index: 120;
+  }
+  &__text-img-back {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 655px;
+      height: 374px;
+      top: -1px;
+      left: -83px;
+      background-color: #ffffff;
+      clip-path: polygon(45% 0, 100% 0%, 55% 100%, 0 100%);
+    }
   }
 }

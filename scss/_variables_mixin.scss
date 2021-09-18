@@ -1,15 +1,20 @@
 // Переменные
 
 $fontRobotoReg: "Roboto", sans-serif;
-$mainColor: #F36C21;
+$mainColor: #f36c21;
 $inputAdaptive: 922px;
-$greyLine: #C4C4C4;
+$greyLine: #c4c4c4;
 // Миксины
 
 @mixin inputAdaptive {
   @media (max-width: $inputAdaptive) {
     @content;
   }
+}
+
+@mixin borderBlockOrang {
+  border: 1px solid $mainColor;
+  border-radius: 8px;
 }
 
 @mixin fontBolt {
@@ -30,10 +35,10 @@ $greyLine: #C4C4C4;
 }
 
 @mixin technologyAkb {
-    min-width: 187px;
-    height: 32px;
-    @include btnSmall;
-    position: relative;
+  min-width: 187px;
+  height: 32px;
+  @include btnSmall;
+  position: relative;
 }
 
 @mixin pageGred {
@@ -42,6 +47,11 @@ $greyLine: #C4C4C4;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+@mixin littleOrangeLine {
+  width: 349px;
+  border-top: 1px solid $mainColor;
 }
 
 @mixin textHeadingSale {
@@ -61,7 +71,7 @@ $greyLine: #C4C4C4;
 
 @mixin marCenter {
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
 }
 
 @mixin btn {
@@ -110,10 +120,10 @@ $greyLine: #C4C4C4;
   bottom: 0;
   left: 0;
   right: 0;
+  object-fit: cover;
 }
 
 @mixin centreFlex {
   display: flex;
   align-items: center;
 }
-
