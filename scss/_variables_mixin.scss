@@ -4,7 +4,19 @@ $fontRobotoReg: "Roboto", sans-serif;
 $mainColor: #f36c21;
 $inputAdaptive: 922px;
 $greyLine: #c4c4c4;
+$colorBlackText: #434343;
 // Миксины
+
+@mixin paddingMob {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@mixin smScreenWidth {
+  @media (max-width: $startAdaptive) {
+    @content;
+  }
+}
 
 @mixin inputAdaptive {
   @media (max-width: $inputAdaptive) {
@@ -20,12 +32,14 @@ $greyLine: #c4c4c4;
 @mixin fontBolt {
   font-family: $fontRobotoReg;
   font-weight: 700;
+  color: $colorBlackText;
 }
 
 @mixin fontBoltHeading {
   font-family: $fontRobotoReg;
   font-weight: 700;
   font-size: 36px;
+  color: $colorBlackText;
 }
 @mixin iconBenefits {
   display: flex;

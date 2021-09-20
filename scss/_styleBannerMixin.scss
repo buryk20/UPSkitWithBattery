@@ -1,4 +1,6 @@
 $largeScreenSize: 2207px;
+$bigBanner: 1924px;
+$startAdaptive: 1582px;
 $textPad: 1456px;
 $smScreenWidth: 1376px;
 $smallestScreenWidth: 1080px;
@@ -7,7 +9,35 @@ $bigMobileWidth: 960px;
 $mobileWidth: 680px;
 $mobileHeight: 600px;
 
-$colorBlackText: #434343;
+$heightBan: 500px;
+
+@mixin adaptivProblemUps {
+  @media (max-width: 1556px) {
+    @content;
+  }
+}
+@mixin smailText {
+  @media (max-width: 820px) {
+    @content;
+  }
+}
+
+@mixin bigBanner {
+  @media (min-width: $bigBanner) {
+    @content;
+  }
+}
+  @mixin startAdaptive {
+    @media (max-width: $startAdaptive) {
+      @content;
+  }
+}
+
+@mixin textPad {
+  @media (max-width: $textPad) {
+    @content;
+  }
+}
 
 @mixin smScreenWidth {
   @media (max-width: $smScreenWidth) {
@@ -15,8 +45,14 @@ $colorBlackText: #434343;
   }
 }
 
-@mixin textPad {
-  @media (max-width: $textPad) {
+@mixin smallestScreenWidth {
+  @media (max-width: $smallestScreenWidth) {
+    @content;
+  }
+}
+
+@mixin bigMobileWidth {
+  @media (max-width: $bigMobileWidth) {
     @content;
   }
 }

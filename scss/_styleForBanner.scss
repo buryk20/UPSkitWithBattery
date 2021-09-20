@@ -1,15 +1,50 @@
 .main-ban-ups {
   font-family: $fontRobotoReg;
+  color: $colorBlackText;
   &__wrp-cont {
+    height: $heightBan;
     background-color: #E9E9E9;
+    @include startAdaptive {
+      & {
+        padding: 0 16px;
+      }
+    }
+    @include mobil {
+      & {
+        height: auto;
+        padding-top: 11px;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: #ffffff;
+      }
+    }
   }
   &__img-wrp {
     position: relative;
-    
   }
   &__img {
+    height: $heightBan;
     @include positionImg;
     margin-left: auto;
+    @include bigBanner {
+      & {
+        width: 69%;
+      }
+    }
+    @include mobil {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__img-mob {
+    width: 100%;
+    display: none;
+    @include mobil {
+      & {
+        display: block;
+      }
+    }
   }
   &__parent {
     position: relative;
@@ -18,7 +53,22 @@
   &__size {
     position: relative;
     @include pageGred;
-    clip-path: polygon(0 0, 51% 0, 26% 100%, 0% 100%)
+    clip-path: polygon(0 0, 51% 0, 26% 100%, 0% 100%);
+    @include smallestScreenWidth {
+      & {
+        clip-path: polygon(0 0, 59% 0, 34% 100%, 0% 100%);
+      }
+    }
+    @include bigMobileWidth {
+      & {
+        clip-path: polygon(0 0, 66% 0, 40% 100%, 0% 100%);
+      }
+    }
+    @include mobil {
+      & {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
   }
   &__h1 {
     max-width: 678px;
@@ -27,10 +77,34 @@
     font-size: 44px;
     font-weight: 700;
     text-transform: uppercase;
+    @include textPad {
+      & {
+        font-size: 40px;
+      }
+    }
+    @include smScreenWidth {
+      & {
+        max-width: 517px;
+        font-size: 26px;
+      }
+    }
+    @include mobil {
+      & {
+        padding-top: 0;
+        @include marCenter;
+        text-align: center;
+      }
+    }
   }
   &__instal-odessa-free {
     margin-bottom: 21px;
     @include centreFlex;
+    @include mobil {
+      & {
+        justify-content: center;
+      }
+    }
+    
   }
   &__instal-odessa-icon {
     margin-right: 20px;
@@ -38,8 +112,21 @@
   &__instal-odessa-text {
     max-width: 347px;
     font-size: 16px;
+    @include smScreenWidth {
+      & {
+        max-width: 274px;
+        font-size: 16px;
+      }
+    }
+  }
+  &__instal-odessa-text-col {
+    color: $mainColor;
   }
   &__instal-odessa-img {
-    
+    @include mobil {
+      & {
+        display: none;
+      }
+    }
   }
 }

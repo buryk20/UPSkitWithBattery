@@ -7,6 +7,7 @@
 .main-cont-wrp-ups {
   // @include pageGred;
   font-family: $fontRobotoReg;
+  color: $colorBlackText;
   &__text-un-ban {
     padding-top: 40px;
     margin-bottom: 40px;
@@ -14,6 +15,17 @@
     max-width: 1116px;
     text-align: center;
     font-size: 18px;
+    @include smScreenWidth {
+      & {
+        @include paddingMob;
+      } 
+    }
+    @include bigMobileWidth {
+      & {
+        padding-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
   }
   &__line {
     max-width: 1440px;
@@ -21,11 +33,33 @@
     margin-bottom: 40px;
     @include marCenter;
     border-top: 1px solid $greyLine;
+    @include textPad {
+      & {
+        margin-left: 16px;
+        margin-right: 16px;
+      } 
+    }
+    @include bigMobileWidth {
+      & {
+        margin-bottom: 20px;
+      }
+    }
   }
   &__heading-text {
     margin-bottom: 40px;
     @include pageGred;
     @include fontBoltHeading;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+      }
+    }
+    @include bigMobileWidth {
+      & {
+        text-align: center;
+        font-size: 22px;
+      }
+    }
   }
   @at-root {
     .problems-ups {
@@ -37,6 +71,12 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+        @include adaptivProblemUps {
+          & {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        }
       }
       &__cont-img-wrp {
         position: relative;
@@ -73,19 +113,57 @@
       &__smail-wrp {
         position: relative;
       }
+      &__des {
+        @include smailText {
+          & {
+            display: none;
+          }
+        }
+      }
+      &__des-mob {
+        display: none;
+        @include smailText {
+          & {
+            display: block;
+          }
+        }
+      }
       &__smail-text {
         position: absolute;
         top: 32px;
         left: 60px;
+        @include smailText {
+          & {
+            top: 35px;
+            left: 23px;
+          }
+        }
       }
       &__smail-pos {
         @include centreFlex;
+        @include smailText {
+          & {
+            align-items: flex-start;
+          }
+        }
       }
       &__smail-text-pos {
         max-width: 813px;
         padding-left: 32px;
         font-size: 24px;
         line-height: 1;
+        @include bigMobileWidth {
+          & {
+            max-width: 700px;
+            font-size: 16px;
+          }
+        }
+        @include smailText {
+          & {
+            padding-left: 10px;
+            max-width: 227px;
+          }
+        }
       }
       &__smail-link {
         color: $mainColor;
@@ -234,6 +312,7 @@
 
 .ups-akb-included {
   position: relative;
+  color: $colorBlackText;
   &__text-wrp {
     @include pageGred;
     color: #ffffff;
@@ -270,6 +349,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: $colorBlackText;
   &__heading {
     margin-left: auto;
     @include textHeadingSale;
@@ -296,6 +376,7 @@
 }
 
 .promotion-conditions-ups {
+  color: $colorBlackText;
   margin-bottom: 40px;
   @include pageGred;
   &__wrp {
@@ -334,6 +415,7 @@
 }
 
 .ups-footer-block {
+  color: $colorBlackText;
   position: relative;
   &__img-back {
     width: 100%;
@@ -343,9 +425,8 @@
   &__text-wrp {
     @include pageGred;
     position: relative;
-    display: flex
-    
-    ;
+    display: flex;
+    justify-content: space-evenly;
   }
   &__text-img {
     position: relative;
@@ -363,5 +444,31 @@
       background-color: #ffffff;
       clip-path: polygon(45% 0, 100% 0%, 55% 100%, 0 100%);
     }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    z-index: 19;
+  }
+  &__text-heading {
+    max-width: 620px;
+    @include fontBoltHeading;
+    margin-bottom: 40px;
+  }
+  &__text-p {
+    max-width: 560px;
+    margin-bottom: 27px;
+    font-size: 24px;
+  }
+  &__phon {
+    margin-right: 27px;
+    @include fontBoltHeading;
+    display: flex;
+    align-items: center;
+  }
+  &__phon-img {
+    margin-right: 27px;
   }
 }
