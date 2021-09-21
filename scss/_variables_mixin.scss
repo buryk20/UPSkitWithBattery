@@ -7,6 +7,12 @@ $greyLine: #c4c4c4;
 $colorBlackText: #434343;
 // Миксины
 
+@mixin akbTypeBtnMob {
+  min-width: 82px;
+  left: 140px;
+  padding: 5px 9px;
+}
+
 @mixin paddingMob {
   padding-left: 16px;
   padding-right: 16px;

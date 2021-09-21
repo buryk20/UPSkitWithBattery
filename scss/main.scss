@@ -4,6 +4,12 @@
 @import "_styleForBanner";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+
+.main-wrp-ups-akb {
+  width: 100%;
+  max-width: 100%;
+  overflow-y: hidden;
+}
 .main-cont-wrp-ups {
   // @include pageGred;
   font-family: $fontRobotoReg;
@@ -29,7 +35,6 @@
   }
   &__line {
     max-width: 1440px;
-    width: 100%;
     margin-bottom: 40px;
     @include marCenter;
     border-top: 1px solid $greyLine;
@@ -81,11 +86,24 @@
       &__cont-img-wrp {
         position: relative;
       }
+      &__line-text {
+        @include littleOrangeLine;
+        width: auto;
+        max-width: 349px;
+        @include marCenter;
+
+      }
       &__title-text {
         position: absolute;
         top: 54px;
         left: 81px;
         z-index: 20;
+        @include blockImgStatic {
+          & {
+            top: 40px;
+            left: 50px;
+          }
+        }
       }
       &__icon-wrp {
         margin-bottom: 10px;
@@ -93,18 +111,47 @@
       }
       &__title-text-width {
         max-width: 263px;
+        @include blockImgStatic {
+          & {
+            max-width: 200px;
+          }
+        }
       }
       &__line {
         @include littleOrangeLine;
+        @include bigMobileWidth {
+          & {
+            @include marCenter;
+          }
+        }
+        @include blockImgStatic {
+          & {
+            width: 250px;
+            margin-left: 0;
+          }
+        }
       }
       &__icon {
         height: 112px;
         margin-right: 15px;
+        @include blockImgStatic {
+          & {
+            width: 14%;
+            height: 5%;
+          }
+        }
       }
       &__text {
         max-width: 350px;
         padding-top: 26px;
         font-size: 16px;
+        @include blockImgStatic {
+          & {
+            max-width: 280px;
+            padding-top: 10px;
+            font-size: 14px;
+          }
+        }
       }
       &__wrp {
         position: relative;
@@ -178,23 +225,65 @@
       display: flex;
       align-items: center;
       position: relative;
+      @include bigMobileWidth {
+        & {
+          min-height: auto;
+          margin-bottom: 20px;
+          flex-direction: column;
+        }
+      }
       &__img-bac {
         width: 100%;
         height: 550px;
         @include positionImg;
+        @include bigMobileWidth {
+          & {
+            height: auto;
+            margin-bottom: 20px;
+            position: relative;
+          }
+        }
       }
       &__text-wrp {
         @include pageGred;
+        @include startAdaptive {
+          & {
+            @include paddingMob;
+          }
+        }
       }
       &__heading {
         @include textHeadingSale;
+        @include bigMobileWidth {
+          & {
+            @include marCenter;
+            font-size: 24px;
+            text-align: center;
+          }
+        }
+      }
+      &__heading-or {
+        color: $mainColor;
       }
       &__text {
         @include textSale;
+        @include bigMobileWidth {
+          & {
+            @include marCenter;
+            text-align: center;
+          }
+        }
+        
       }
       &__text-btn {
         min-width: 187px;
         @include btn;
+        @include bigMobileWidth {
+          & {
+            @include marCenter;
+            display: block;
+          }
+        }
       }
     }
   }
@@ -204,14 +293,91 @@
       &__wrp-right {
         display: flex;
         justify-content: space-around;
+        @include startAdaptive {
+          & {
+            // margin-bottom: 20px;
+          }
+        }
+        @include textPad {
+          & {
+            flex-direction: column;
+          }
+        }
+      }
+      &__img-left-kit-mob {
+        display: none;
+        @include mobileWidth {
+          & {
+            display: block;
+          }
+        }
+      }
+      &__img-left-kit {
+        @include mobileWidth {
+          & {
+            display: none;
+          }
+        }
+      }
+      &__icon-wrp-bel-bac-mob {
+        margin-right: 16px;
+        display: none;
+        @include bigMobileWidth {
+          display: block;
+        }
+      }
+      &__icon-wrp-bel-bac {
+        @include bigMobileWidth {
+          display: none;
+        }
       }
       &__wrp-left {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        @include startAdaptive {
+          & {
+            margin-bottom: 20px;
+          }
+        }
+        @include textPad {
+          & {
+            flex-direction: column;
+          }
+        }
+        @include mobileWidth {
+          & {
+            margin-bottom: 0;
+          }
+        }
       }
       &__text-wrp {
         display: flex;
+        @include textPad {
+          & {
+            flex-direction: column-reverse;
+          }
+        }
+      }
+      &__text-heading-left-mob {
+        display: none;
+        max-width: 770px;
+        padding-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @include fontBoltHeading;
+        @include textPad {
+          & {
+            display: block;
+          }
+        }
+        @include mobileWidth {
+          & {
+            padding-top: 20px;
+            font-size: 22px;
+          }
+        }
       }
       &__icon-wrp-bel {
         margin-bottom: 5px;
@@ -221,9 +387,34 @@
       &__text-wrp-apecific {
         max-width: 349px;
         margin-right: 74px;
+        @include textPad {
+          & {
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+        @include mobileWidth {
+          & {
+          @include paddingMob;
+          }
+        }
       }
       &__text-wrp-apecific-left {
         max-width: 349px;
+        @include marCenter;
+        @include textPad {
+          & {
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+        @include mobileWidth {
+          & {
+          @include paddingMob;
+          }
+        }
       }
       &__icon-wrp {
         margin-bottom: 11px;
@@ -231,40 +422,127 @@
       }
       &__img-btn-gel {
         @include technologyAkb;
+        position: absolute;
         top: 60px;
-        left: 65px;
+        left:  -127px;
         background-color: #44b1bb;
+        @include gelPos {
+          & {
+            left: -52px;
+          }
+        }
+        @include textPad {
+          & {
+            right: -50px;
+            left: auto;
+            top: 75px
+          }
+        }
+        @include mobileWidth {
+          & {
+            @include akbTypeBtnMob;
+            top: 22px;
+          }
+        }
       }
       &__img-btn-agm {
         @include technologyAkb;
+        position: absolute;
         top: 60px;
-        left: 65px;
+        left: -127px;
         background-color: #1a3b7a;
+        @include gelPos {
+          & {
+            left: -42px;
+          }
+        }
+        @include textPad {
+          & {
+            right: -50px;
+            left: auto;
+            top: 75px
+          }
+        }
+        @include mobileWidth {
+          & {
+            @include akbTypeBtnMob;
+            min-width: 216px;
+            top: 30px;
+            left: 55px;
+          }
+        }
       }
       &__img-btn-gel-left {
         @include technologyAkb;
         top: 60px;
-        left: -70px;
+        left: 328px;
         background-color: #e25750;
+        @include mobileWidth {
+          & {
+            @include akbTypeBtnMob;
+          }
+        }
       }
       &__img-btn-mgel-left {
         @include technologyAkb;
         top: 60px;
-        left: -70px;
+        left: 328px;
         background-color: #329138;
+        @include mobileWidth {
+          & {
+            @include akbTypeBtnMob;
+            left: 97px;
+          }
+        }
       }
       &__img {
         display: flex;
+        position: relative;
+        @include textPad {
+          & {
+            justify-content: center;
+            flex-direction: row-reverse;
+          }
+        }
+      }
+      &__img-pos {
+        position: relative;
       }
       &__img-left {
         display: flex;
         flex-direction: row-reverse;
+        @include textPad {
+          & {
+            justify-content: center;
+          }
+        }
       }
       &__text-heading {
         max-width: 809px;
         margin-bottom: 40px;
         padding-top: 50px;
         @include fontBoltHeading;
+        @include textPad {
+          & {
+            display: none;
+          }
+        }
+      }
+      &__text-heading-mob {
+        @include fontBoltHeading;
+        display: none;
+        @include textPad {
+          & {
+            display: block;
+            text-align: center;
+          }
+        }
+        @include mobileWidth {
+          & {
+            padding-top: 20px;
+            font-size: 22px;
+          }
+        }
       }
       &__text-heading-left {
         max-width: 770px;
@@ -272,6 +550,19 @@
         padding-top: 50px;
         @include fontBoltHeading;
         text-align: end;
+        @include textPad {
+          & {
+            display: none;
+          }
+        }
+      }
+      &__icon-wrp-width {
+        @include smallestScreenWidth {
+          & {
+            max-width: 150px;
+            font-size: 14px;
+          }
+        }
       }
       &__text-main {
         margin-bottom: 18px;
@@ -288,23 +579,79 @@
       }
       &__wrp-icon {
         @include iconBenefits;
+        @include textPad {
+          & {
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 16px;
+            flex-direction: row;
+          }
+        }
+        @include bigMobileWidth {
+          & {
+            margin-right: 0;
+            margin-left: 0;
+            justify-content: space-evenly;
+          }
+        }
+        @include blockImgStatic {
+          & {
+            @include paddingMob;
+          }
+        }
       }
       &__wrp-icon-left {
         margin-right: 80px;
         @include iconBenefits;
+        @include textPad {
+          & {
+            margin-bottom: 10px;
+            margin-right: 0;
+            justify-content: center;
+            flex-direction: row;
+          }
+        }
+        @include bigMobileWidth {
+          & {
+            margin-right: 0;
+            margin-left: 0;
+            justify-content: space-evenly;
+          }
+        }
+        @include blockImgStatic {
+          & {
+            @include paddingMob;
+          }
+        }
       }
       &__btn {
         margin-top: 10px;
         @include btn;
+        @include textPad {
+          & {
+            display: block;
+            @include marCenter;
+          }
+        }
       }
       &__btn-wrp {
         display: flex;
         justify-content: center;
         padding-left: 250px;
+        @include textPad {
+          & {
+            padding-left: 0;
+          }
+        }
       }
       &__text-wrp-left {
         display: flex;
         flex-direction: row-reverse;
+        @include textPad {
+          & {
+            flex-direction: column-reverse;
+          }
+        }
       }
     }
   }
@@ -313,12 +660,23 @@
 .ups-akb-included {
   position: relative;
   color: $colorBlackText;
+  @include textPad {
+    & {
+      padding-top: 20px;
+    }
+  }
   &__text-wrp {
     @include pageGred;
     color: #ffffff;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+      }
+    }
   }
   &__heading {
     @include textHeadingSale;
+    color: #ffffff;
   }
   &__text {
     @include textSale;
@@ -331,16 +689,31 @@
     width: 100%;
     object-fit: cover;
     @include positionImg;
+    @include startAdaptive {
+      & {
+        height: 500px;
+      }
+    }
   }
   &__wrp {
     min-height: 700px;
     @include centreFlex;
     position: relative;
+    @include startAdaptive {
+      & {
+        min-height: 500px;
+      }
+    }
   }
   &__heading-text {
     margin-bottom: 40px;
     @include pageGred;
     @include fontBoltHeading;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+      }
+    }
   }
 }
 
@@ -456,6 +829,7 @@
     max-width: 620px;
     @include fontBoltHeading;
     margin-bottom: 40px;
+    color: #ffffff;
   }
   &__text-p {
     max-width: 560px;
@@ -465,6 +839,7 @@
   &__phon {
     margin-right: 27px;
     @include fontBoltHeading;
+    color: #ffffff;
     display: flex;
     align-items: center;
   }
