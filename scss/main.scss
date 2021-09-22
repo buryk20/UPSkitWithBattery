@@ -3,6 +3,7 @@
 @import "_styleBannerMixin.scss";
 @import "_styleForBanner";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https:https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 
 
 .main-wrp-ups-akb {
@@ -227,9 +228,35 @@
       position: relative;
       @include bigMobileWidth {
         & {
-          min-height: auto;
-          margin-bottom: 20px;
-          flex-direction: column;
+          display: none;
+        }
+      }
+      &__line-text {
+        @include littleOrangeLine;
+        width: auto;
+        max-width: 349px;
+        @include marCenter;
+        @include blockImgStatic {
+          & {
+            @include marCenter;
+          }
+        }
+      }
+      @include mobileWidth {
+        & {
+          margin-bottom: 0;
+        }
+      }
+      &__line-action {
+        display: none;
+        max-width: 320px;
+        width: 100%;
+        @include marCenter;
+        @include bigMobileWidth {
+          & {
+            display: block;
+        border-top: 1px solid $greyLine;
+          }
         }
       }
       &__img-bac {
@@ -249,6 +276,11 @@
         @include startAdaptive {
           & {
             @include paddingMob;
+          }
+        }
+        @include bigMobileWidth {
+          & {
+            margin-bottom: 30px;
           }
         }
       }
@@ -673,16 +705,59 @@
         @include paddingMob;
       }
     }
+    @include mobileWidth {
+      & {
+        display: none;
+      }
+    }
   }
   &__heading {
     @include textHeadingSale;
     color: #ffffff;
   }
+  &__heading-mob {
+    @include pageGred;
+    @include textHeadingSale;
+    color: #ffffff;
+    display: none;
+    @include mobileWidth {
+      & {
+        max-width: 303px;
+        padding-left: 16px;
+        margin: 0;
+        display: flex;
+        font-size: 18px;
+      }
+    }
+  }
   &__text {
     @include textSale;
+    @include mobileWidth {
+      & {
+        padding-top: 15px;
+        margin-bottom: 15px;
+        @include paddingMob;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+  &__text-mob {
+    display: none;
+    @include mobileWidth {
+      & {
+        display: block;
+      }
+    }
   }
   &__text-btn {
     @include btn;
+    @include bigMobileWidth {
+      & {
+        display: block;
+        @include marCenter;
+      }
+    }
   }
   &__img {
     height: 700px;
@@ -692,6 +767,11 @@
     @include startAdaptive {
       & {
         height: 500px;
+      }
+    }
+    @include mobileWidth {
+      & {
+        height: 148px;
       }
     }
   }
@@ -704,6 +784,11 @@
         min-height: 500px;
       }
     }
+    @include mobileWidth {
+      & {
+        min-height: 148px;
+      }
+    }
   }
   &__heading-text {
     margin-bottom: 40px;
@@ -712,6 +797,13 @@
     @include startAdaptive {
       & {
         @include paddingMob;
+      }
+    }
+    @include mobileWidth {
+      & {
+        margin-bottom: 15px;;
+        text-align: center;
+        font-size: 22px;
       }
     }
   }
@@ -728,8 +820,47 @@
     @include textHeadingSale;
     text-align: right;
   }
+  &__heading-mob {
+    margin-left: auto;
+    margin-right: 16px;
+    display: none;
+    @include textHeadingSale;
+    text-align: right;
+    @include bigMobileWidth {
+      & {
+        display: flex;
+        font-size: 30px;
+      }
+    }
+    @include mobileWidth {
+      & {
+        font-size: 18px;
+        text-transform: inherit;
+      }
+    }
+  }
   &__text-wrp {
     text-align: end;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+      }
+    }
+    @include bigMobileWidth {
+      & {
+        display: none;
+      }
+    }
+  }
+  &__text-wrp-mob {
+    margin-bottom: 15px;
+    display: none;
+    font-size: 14px;
+    @include bigMobileWidth {
+      & {
+        display: block;
+      }
+    }
   }
   &__line {
     margin-left: auto;
@@ -738,9 +869,19 @@
   &__text {
     margin-left: auto;
     @include textSale;
+    @include bigMobileWidth {
+      & {
+        padding-top: 0;
+        margin-bottom: 15px;
+        font-size: 14px;
+        @include paddingMob;
+        @include marCenter;
+        text-align: center;
+      }
+    }
   }
   &__wrp {
-    min-height: 700px;
+    // min-height: 700px;
     @include centreFlex;
     position: relative;
   }
@@ -756,44 +897,122 @@
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+        justify-content: space-evenly;
+      }
+    }
+    @include promotionConditions {
+      & {
+        margin-bottom: 0;
+        flex-wrap: wrap;
+      }
+    }
   }
   &__wrp-cont {
     padding-top: 10px;
     padding-bottom: 10px;
     display: inline-flex;
     @include borderBlockOrang;
+    @include promotionConditions {
+      & {
+        margin-bottom: 15px;
+      }
+    }
+    @include mobileWidth {
+      & {
+        flex-direction: column;
+      }
+    }
   }
   &__heading {
     @include textHeadingSale;
     font-size: 36px;
+    @include startAdaptive {
+      & {
+        @include paddingMob;
+        text-align: center;
+        @include marCenter;
+      }
+    }
+    @include mobileWidth {
+      & {
+        font-size: 22px;
+      }
+    }
   }
   &__numbers {
     margin-bottom: 3px;
     @include fontBoltHeading;
     color: $mainColor;
+    @include mobileWidth {
+      & {
+        margin-right: 10px;
+        font-size: 24px;
+      }
+    }
   }
   &__text {
     max-width: 191px;
     font-size: 18px;
     font-weight: 500;
+    @include mobileWidth {
+      & {
+        max-width: 307px;
+        padding-top: 11px;
+        font-size: 14px;
+      }
+    }
   }
   &__wrp-text {
     padding-left: 30px;
+    @include mobileWidth {
+      & {
+        padding-left: 10px;
+        display: flex;
+      }
+    }
+  }
+  &__img {
+    @include mobileWidth {
+      & {
+        @include marCenter;
+      }
+    }
   }
   &__text-btn {
     display: flex;
     @include marCenter;
     @include btn;
   }
+  &__arrow {
+    @include startAdaptive {
+      & {
+        display: none;
+      }
+    }
+  }
 }
 
 .ups-footer-block {
   color: $colorBlackText;
   position: relative;
+  margin-bottom: 40px;
   &__img-back {
     width: 100%;
     height: 372px;
     @include positionImg;
+    @include mobileWidth {
+      & {
+        height: 201px;
+      }
+    }
+    @include littleMob {
+      & {
+        height: 172px;
+      }
+    }
   }
   &__text-wrp {
     @include pageGred;
@@ -804,18 +1023,31 @@
   &__text-img {
     position: relative;
     z-index: 120;
+    @include mobileWidth {
+      & {
+        width: 56%;
+        @include marCenter;
+      }
+    }
   }
   &__text-img-back {
     position: relative;
     &::after {
       content: "";
       position: absolute;
-      width: 655px;
+      width: 635px;
       height: 374px;
       top: -1px;
       left: -83px;
       background-color: #ffffff;
       clip-path: polygon(45% 0, 100% 0%, 55% 100%, 0 100%);
+      @include mobileWidth {
+        & {
+          width: 204px;
+          height: 204px;
+          left: 83px;
+        }
+      }
     }
   }
   &__text {
@@ -824,17 +1056,59 @@
     justify-content: center;
     color: #ffffff;
     z-index: 19;
+    @include smScreenWidth {
+      & {
+        color: $colorBlackText;
+        display: none;
+      }
+    }
+  }
+  &__text-mob {
+    padding-top: 15px;
+    @include centreFlex;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    z-index: 30;
+    @include smScreenWidth {
+      & {
+        display: flex;
+      }
+    }
   }
   &__text-heading {
     max-width: 620px;
     @include fontBoltHeading;
     margin-bottom: 40px;
     color: #ffffff;
+    @include smScreenWidth {
+      & {
+        margin-bottom: 15px;
+        color: $colorBlackText;
+      }
+    }
+    @include mobileWidth {
+      & {
+        @include paddingMob;
+        font-size: 22px;
+      }
+    }
   }
   &__text-p {
     max-width: 560px;
     margin-bottom: 27px;
     font-size: 24px;
+    @include smScreenWidth {
+      & {
+        margin-bottom: 15px;
+      }
+    }
+    @include mobileWidth {
+      & {
+        font-size: 16px;
+      }
+    }
   }
   &__phon {
     margin-right: 27px;
@@ -842,6 +1116,18 @@
     color: #ffffff;
     display: flex;
     align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    @include smScreenWidth {
+      & {
+        color: $colorBlackText;
+      }
+    }
+    @include mobileWidth {
+      & {
+        font-size: 22px;
+      }
+    }
   }
   &__phon-img {
     margin-right: 27px;
