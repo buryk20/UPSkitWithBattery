@@ -91,7 +91,6 @@
         width: auto;
         max-width: 349px;
         @include marCenter;
-
       }
       &__title-text {
         position: absolute;
@@ -219,6 +218,13 @@
     }
   }
   @at-root {
+    .action-odessa-ups-none {
+      @include bigMobileWidth {
+        & {
+          display: none;
+        }
+      }
+    }
     .action-odessa-ups {
       min-height: 567px;
       margin-bottom: 32px;
@@ -227,14 +233,24 @@
       position: relative;
       @include bigMobileWidth {
         & {
-          display: none;
+          flex-direction: column;
+        }
+      }
+      &__line-text-action {
+        @include littleOrangeLine;
+        width: auto;
+        max-width: 349px;
+        @include bigMobileWidth {
+          & {
+            @include marCenter;
+          }
         }
       }
       &__line-text {
         @include littleOrangeLine;
         width: auto;
         max-width: 349px;
-        @include marCenter;
+        margin-left: 0;
         @include blockImgStatic {
           & {
             @include marCenter;
