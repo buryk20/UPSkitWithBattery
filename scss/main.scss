@@ -3,7 +3,6 @@
 @import "_styleBannerMixin.scss";
 @import "_styleForBanner";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https:https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 
 
 .main-wrp-ups-akb {
@@ -1116,7 +1115,6 @@
     color: #ffffff;
     display: flex;
     align-items: center;
-    font-family: 'Inter', sans-serif;
     font-weight: 800;
     @include smScreenWidth {
       & {
